@@ -1,0 +1,7 @@
+{
+  "name": "Timegenics",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
