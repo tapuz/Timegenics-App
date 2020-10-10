@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  user: any;
 
-  constructor() {}
+  constructor(private storage: Storage) {
+    this.storage.get('user').then((val) => {
+      this.user = val;
+      console.log('Your user is ', val);
+      
+    });
+  }
 
 }

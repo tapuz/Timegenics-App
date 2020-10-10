@@ -28,6 +28,9 @@ export class PhotoService {
 
    }
 
+  public reset() {
+    this.pictures = [];
+  }
   public async loadSaved() {
     // Retrieve cached photo array data
     const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
@@ -134,7 +137,7 @@ export class PhotoService {
     }
   }
 
-  async uploadPictures(){
+  async uploadPictures(tag:string){
     
     //Show loading
     //let loader = this.loadingCtrl.create({
@@ -169,7 +172,7 @@ export class PhotoService {
         httpMethod: 'post',
         mimeType: "image/jpeg",
         headers: {},
-        params:{'patientID':this.patientID,'tag':'camera'}
+        params:{'patientID':this.patientID,'tag':tag}
       }
 
       //const base64Data = await this.readAsBase64(foto);
@@ -209,6 +212,8 @@ export class PhotoService {
     //this.loading.dismiss();
     
   }
+
+  
 
 
   // Read camera photo into base64 format based on the platform the app is running on

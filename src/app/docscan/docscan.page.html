@@ -39,7 +39,7 @@
   </ion-grid>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="photoService.uploadPictures()" [hidden]="!photoService.pictures.length>0" >
+    <ion-fab-button (click)="photoService.uploadPictures('doc')" [hidden]="!photoService.pictures.length>0" >
       <ion-icon name="cloud-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

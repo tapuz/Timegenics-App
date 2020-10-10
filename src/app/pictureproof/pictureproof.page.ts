@@ -31,7 +31,7 @@ export class PictureproofPage implements OnInit {
               ) {}
 
   async ngOnInit() {
-    await this.photoService.loadSaved();
+    await this.photoService.reset();
     this.storage.get('user').then((val) => {
       this.getActivePatient(val);
       
